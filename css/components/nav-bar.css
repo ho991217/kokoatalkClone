@@ -11,7 +11,6 @@
 .nav__list {
   display: flex;
   justify-content: space-between;
-  background-color: ;
 }
 .nav__link {
   color: #2e363e;
@@ -22,10 +21,51 @@
   position: absolute;
   left: 20px;
   bottom: 15px;
+  animation: notificationAnimation 2s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+    infinite;
+}
+
+@keyframes notificationAnimation {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-5px) rotateY(260deg);
+  }
+  100% {
+    transform: none;
+  }
 }
 
 .nav__settingnoti {
   position: absolute;
   left: 30px;
   bottom: 25px;
+}
+
+@keyframes appearBtnAnimation {
+  from {
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.nav__btn {
+  transform: translateY(80px);
+  opacity: 0;
+  animation: appearBtnAnimation 1s ease-in-out forwards;
+}
+
+.nav__btn:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.nav__btn:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.nav__btn:last-child {
+  animation-delay: 0.6s;
 }
